@@ -1,0 +1,2125 @@
+{
+  "info": {
+    "_postman_id": "017b4dd5-93fc-47bf-a91b-1f4d147ec4ca",
+    "name": "Blog Platform API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52221674",
+    "_collection_link": "https://go.postman.co/collection/52221674-017b4dd5-93fc-47bf-a91b-1f4d147ec4ca?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Author",
+      "item": [
+        {
+          "name": "Create Author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"alia\",\r\n  \"email\": \"alia@example.com\",\r\n  \"bio\": \"Writer\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/authors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Author",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"alia\",\r\n  \"email\": \"alia@example.com\",\r\n  \"bio\": \"Writer\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/authors",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "220",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"dc-bV7UcIV0dtVhP1ygdnb3LQ9fPlg\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:00:07 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"name\": \"alia\",\n        \"email\": \"alia@example.com\",\n        \"bio\": \"Writer\",\n        \"status\": \"active\",\n        \"deletedAt\": null,\n        \"_id\": \"698c53274a5b5c4f1ac54c46\",\n        \"createdAt\": \"2026-02-11T10:00:07.190Z\",\n        \"updatedAt\": \"2026-02-11T10:00:07.190Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/authors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get all",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/authors",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "506",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1fa-a1xt/G4TiE6rskLe3rY2EPCO9MI\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 09:56:59 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 2,\n    \"totalPages\": 1,\n    \"results\": 2,\n    \"data\": [\n        {\n            \"status\": \"active\",\n            \"deletedAt\": null,\n            \"_id\": \"698c3378a4b41f397f2b14ab\",\n            \"name\": \"Asmaa\",\n            \"email\": \"asmaashr@example.com\",\n            \"bio\": \"Writer\",\n            \"createdAt\": \"2026-02-11T07:44:56.129Z\",\n            \"updatedAt\": \"2026-02-11T07:44:56.129Z\",\n            \"__v\": 0\n        },\n        {\n            \"status\": \"active\",\n            \"deletedAt\": null,\n            \"_id\": \"6989a7776d148dcedfecfd85\",\n            \"name\": \"Zahraa Salim\",\n            \"email\": \"zahraa@example.com\",\n            \"bio\": \"Writer\",\n            \"createdAt\": \"2026-02-09T09:23:04.008Z\",\n            \"updatedAt\": \"2026-02-09T09:23:04.008Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "get one",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/authors/698b2e3a4c35aad2edaefcb8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors",
+                "698b2e3a4c35aad2edaefcb8"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get one",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/authors/698c3378a4b41f397f2b14ab",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors",
+                    "698c3378a4b41f397f2b14ab"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "225",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"e1-SapMku1dr5f9ALZsBTMxR4uIrMc\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 09:58:17 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"status\": \"active\",\n        \"deletedAt\": null,\n        \"_id\": \"698c3378a4b41f397f2b14ab\",\n        \"name\": \"Asmaa\",\n        \"email\": \"asmaashr@example.com\",\n        \"bio\": \"Writer\",\n        \"createdAt\": \"2026-02-11T07:44:56.129Z\",\n        \"updatedAt\": \"2026-02-11T07:44:56.129Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Asmaa Updated\",\r\n  \"bio\": \"Senior tech editor\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/authors/698b2e3a4c35aad2edaefcb8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors",
+                "698b2e3a4c35aad2edaefcb8"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"alia Updated\",\r\n  \"bio\": \"Senior tech editor\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/authors/698c53274a5b5c4f1ac54c46",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors",
+                    "698c53274a5b5c4f1ac54c46"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "240",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f0-ZzQ0vhBNjRFMTRwixs/eFQ2FJS4\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:00:59 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"_id\": \"698c53274a5b5c4f1ac54c46\",\n        \"name\": \"alia Updated\",\n        \"email\": \"alia@example.com\",\n        \"bio\": \"Senior tech editor\",\n        \"status\": \"active\",\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-02-11T10:00:07.190Z\",\n        \"updatedAt\": \"2026-02-11T10:00:58.920Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/authors/698c344aa4b41f397f2b14b5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors",
+                "698c344aa4b41f397f2b14b5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/authors/698c53274a5b5c4f1ac54c46",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors",
+                    "698c53274a5b5c4f1ac54c46"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:01:36 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "failed",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/authors/6989a7776d148dcedfecfd85",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors",
+                    "6989a7776d148dcedfecfd85"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "95",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5f-5uvcnzYeNvce39fefu63j2/k3CI\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:02:46 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Cannot delete author: this author still has posts. Delete the author's posts first.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "sort&pagingation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/authors?sort=createdAt&order=desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "authors"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "sort&pagingation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/authors?sort=createdAt&order=desc",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "authors"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "createdAt",
+                      "sortOrder": 0
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc",
+                      "sortOrder": 1
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "506",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1fa-a1xt/G4TiE6rskLe3rY2EPCO9MI\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:04:07 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 2,\n    \"totalPages\": 1,\n    \"results\": 2,\n    \"data\": [\n        {\n            \"status\": \"active\",\n            \"deletedAt\": null,\n            \"_id\": \"698c3378a4b41f397f2b14ab\",\n            \"name\": \"Asmaa\",\n            \"email\": \"asmaashr@example.com\",\n            \"bio\": \"Writer\",\n            \"createdAt\": \"2026-02-11T07:44:56.129Z\",\n            \"updatedAt\": \"2026-02-11T07:44:56.129Z\",\n            \"__v\": 0\n        },\n        {\n            \"status\": \"active\",\n            \"deletedAt\": null,\n            \"_id\": \"6989a7776d148dcedfecfd85\",\n            \"name\": \"Zahraa Salim\",\n            \"email\": \"zahraa@example.com\",\n            \"bio\": \"Writer\",\n            \"createdAt\": \"2026-02-09T09:23:04.008Z\",\n            \"updatedAt\": \"2026-02-09T09:23:04.008Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "get all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get all",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1386",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"56a-XuM/uJuvVqU41pSjb2VEbyGappg\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:14:26 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 3,\n    \"totalPages\": 1,\n    \"results\": 3,\n    \"data\": [\n        {\n            \"_id\": \"698c3a30ef9b9ed6ef57a67d\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis 2\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-11T08:13:36.030Z\",\n            \"createdAt\": \"2026-02-11T08:13:36.033Z\",\n            \"updatedAt\": \"2026-02-11T08:13:36.033Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698b1f2655c8f834f142be27\",\n            \"title\": \"Getting Started with Node.js\",\n            \"slug\": \"getting-started-with-nodejs\",\n            \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\",\n                \"javascript\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n            \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n            \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989b1bf38a01f5aaa5bb078\",\n            \"title\": \"Why Node.js is Great\",\n            \"slug\": \"why-nodejs-is-great\",\n            \"content\": \"Node.js allows JavaScript to run on the server side...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-09T10:06:55.358Z\",\n            \"createdAt\": \"2026-02-09T10:06:55.385Z\",\n            \"updatedAt\": \"2026-02-09T10:06:55.385Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "get one",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/698b1f2655c8f834f142be27",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts",
+                "698b1f2655c8f834f142be27"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get one",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts/698b1f2655c8f834f142be27",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts",
+                    "698b1f2655c8f834f142be27"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "528",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"210-4PQ+twEY75r2jPxFxS4zNmmD6gA\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:14:15 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"_id\": \"698b1f2655c8f834f142be27\",\n        \"title\": \"Getting Started with Node.js\",\n        \"slug\": \"getting-started-with-nodejs\",\n        \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n        \"status\": \"published\",\n        \"tags\": [\n            \"node\",\n            \"backend\",\n            \"javascript\"\n        ],\n        \"author\": {\n            \"_id\": \"6989a7776d148dcedfecfd85\",\n            \"name\": \"Zahraa Salim\",\n            \"email\": \"zahraa@example.com\"\n        },\n        \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n        \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n        \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThiMzI2YzRjMzVhYWQyZWRhZWZjZDAiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzA3OTU4MTQsImV4cCI6MTc3MTQwMDYxNH0.PDNrTQL1mpT6ZxLaj3rBNcOrXFrBzQOaSKbulWZaHfQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Understanding REST APIs\",\r\n  \"slug\": \"understanding-rest-apis 5\",\r\n  \"content\": \"REST APIs are a standard way to build backend services...\",\r\n  \"status\": \"published\",\r\n  \"tags\": [\"api\", \"backend\", \"node\"],\r\n  \"author\": \"698b2e3a4c35aad2edaefcb8\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/posts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "create",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Understanding REST APIs\",\r\n  \"slug\": \"understanding-rest-apis 2\",\r\n  \"content\": \"REST APIs are a standard way to build backend services...\",\r\n  \"status\": \"published\",\r\n  \"tags\": [\"api\", \"backend\", \"node\"],\r\n  \"author\": \"698b2e3a4c35aad2edaefcb8\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/posts",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "376",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"178-wBk3L6uTGU/tNYvaUytdKWxsebQ\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:13:36 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"_id\": \"698c3a30ef9b9ed6ef57a67d\",\n        \"title\": \"Understanding REST APIs\",\n        \"slug\": \"understanding-rest-apis 2\",\n        \"content\": \"REST APIs are a standard way to build backend services...\",\n        \"status\": \"published\",\n        \"tags\": [\n            \"api\",\n            \"backend\",\n            \"node\"\n        ],\n        \"author\": null,\n        \"publishedAt\": \"2026-02-11T08:13:36.030Z\",\n        \"createdAt\": \"2026-02-11T08:13:36.033Z\",\n        \"updatedAt\": \"2026-02-11T08:13:36.033Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Understanding REST APIs (Updated)\",\r\n  \"content\": \"This article explains REST APIs in more detail...\",\r\n  \"status\": \"published\",\r\n  \"tags\": [\"api\", \"node\", \"express\"]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/posts/698c368ae3e3f19100945cdf",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts",
+                "698c368ae3e3f19100945cdf"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Understanding REST APIs (Updated)\",\r\n  \"content\": \"This article explains REST APIs in more detail...\",\r\n  \"status\": \"published\",\r\n  \"tags\": [\"api\", \"node\", \"express\"]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/posts/698b1f2655c8f834f142be27",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts",
+                    "698b1f2655c8f834f142be27"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "528",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"210-4PQ+twEY75r2jPxFxS4zNmmD6gA\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:13:18 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"_id\": \"698b1f2655c8f834f142be27\",\n        \"title\": \"Getting Started with Node.js\",\n        \"slug\": \"getting-started-with-nodejs\",\n        \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n        \"status\": \"published\",\n        \"tags\": [\n            \"node\",\n            \"backend\",\n            \"javascript\"\n        ],\n        \"author\": {\n            \"_id\": \"6989a7776d148dcedfecfd85\",\n            \"name\": \"Zahraa Salim\",\n            \"email\": \"zahraa@example.com\"\n        },\n        \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n        \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n        \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "soft delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/6989b1bf38a01f5aaa5bb078",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts",
+                "6989b1bf38a01f5aaa5bb078"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "soft delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts/6989b1bf38a01f5aaa5bb078",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts",
+                    "6989b1bf38a01f5aaa5bb078"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:19:40 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "get by author",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/author/698b2e3a4c35aad2edaefcb8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts",
+                "author",
+                "698b2e3a4c35aad2edaefcb8"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get by author",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts/author/698b2e3a4c35aad2edaefcb8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts",
+                    "author",
+                    "698b2e3a4c35aad2edaefcb8"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "469",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1d5-+NYqLJtdS0QHP7Luk6MsCbanux0\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:10:10 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"author\": \"698b2e3a4c35aad2edaefcb8\",\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 1,\n    \"totalPages\": 1,\n    \"results\": 1,\n    \"data\": [\n        {\n            \"_id\": \"698b311c4c35aad2edaefcc4\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-10T13:22:36.717Z\",\n            \"createdAt\": \"2026-02-10T13:22:36.725Z\",\n            \"updatedAt\": \"2026-02-10T13:22:36.725Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts?page=1&limit=5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "pagination",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts?page=1&limit=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "sortOrder": 0
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5",
+                      "sortOrder": 1
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1383",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"567-raCqWJYDG2lyyHm81uxjLyjXR40\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:09:59 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 5,\n    \"total\": 3,\n    \"totalPages\": 1,\n    \"results\": 3,\n    \"data\": [\n        {\n            \"_id\": \"698b311c4c35aad2edaefcc4\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-10T13:22:36.717Z\",\n            \"createdAt\": \"2026-02-10T13:22:36.725Z\",\n            \"updatedAt\": \"2026-02-10T13:22:36.725Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698b1f2655c8f834f142be27\",\n            \"title\": \"Getting Started with Node.js\",\n            \"slug\": \"getting-started-with-nodejs\",\n            \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\",\n                \"javascript\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n            \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n            \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989b1bf38a01f5aaa5bb078\",\n            \"title\": \"Why Node.js is Great\",\n            \"slug\": \"why-nodejs-is-great\",\n            \"content\": \"Node.js allows JavaScript to run on the server side...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-09T10:06:55.358Z\",\n            \"createdAt\": \"2026-02-09T10:06:55.385Z\",\n            \"updatedAt\": \"2026-02-09T10:06:55.385Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "filtering",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts?status=published",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "published"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "filtering",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts?status=published",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "published",
+                      "sortOrder": 0
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1384",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"568-mUJLtx/ml2gp9GPTSA2XX4hgAJc\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:08:00 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 3,\n    \"totalPages\": 1,\n    \"results\": 3,\n    \"data\": [\n        {\n            \"_id\": \"698b311c4c35aad2edaefcc4\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-10T13:22:36.717Z\",\n            \"createdAt\": \"2026-02-10T13:22:36.725Z\",\n            \"updatedAt\": \"2026-02-10T13:22:36.725Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698b1f2655c8f834f142be27\",\n            \"title\": \"Getting Started with Node.js\",\n            \"slug\": \"getting-started-with-nodejs\",\n            \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\",\n                \"javascript\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n            \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n            \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989b1bf38a01f5aaa5bb078\",\n            \"title\": \"Why Node.js is Great\",\n            \"slug\": \"why-nodejs-is-great\",\n            \"content\": \"Node.js allows JavaScript to run on the server side...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-09T10:06:55.358Z\",\n            \"createdAt\": \"2026-02-09T10:06:55.385Z\",\n            \"updatedAt\": \"2026-02-09T10:06:55.385Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "sorting",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts?sort=createdAt&order=desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "sorting",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts?sort=createdAt&order=desc",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "createdAt",
+                      "sortOrder": 0
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc",
+                      "sortOrder": 1
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1384",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"568-mUJLtx/ml2gp9GPTSA2XX4hgAJc\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:07:47 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 3,\n    \"totalPages\": 1,\n    \"results\": 3,\n    \"data\": [\n        {\n            \"_id\": \"698b311c4c35aad2edaefcc4\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-10T13:22:36.717Z\",\n            \"createdAt\": \"2026-02-10T13:22:36.725Z\",\n            \"updatedAt\": \"2026-02-10T13:22:36.725Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698b1f2655c8f834f142be27\",\n            \"title\": \"Getting Started with Node.js\",\n            \"slug\": \"getting-started-with-nodejs\",\n            \"content\": \"Node.js allows JavaScript to run on the server side and is widely used for building scalable backend applications.\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\",\n                \"javascript\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-10T12:05:58.261Z\",\n            \"createdAt\": \"2026-02-10T12:05:58.267Z\",\n            \"updatedAt\": \"2026-02-10T12:05:58.267Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989b1bf38a01f5aaa5bb078\",\n            \"title\": \"Why Node.js is Great\",\n            \"slug\": \"why-nodejs-is-great\",\n            \"content\": \"Node.js allows JavaScript to run on the server side...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"node\",\n                \"backend\"\n            ],\n            \"author\": {\n                \"_id\": \"6989a7776d148dcedfecfd85\",\n                \"name\": \"Zahraa Salim\",\n                \"email\": \"zahraa@example.com\"\n            },\n            \"publishedAt\": \"2026-02-09T10:06:55.358Z\",\n            \"createdAt\": \"2026-02-09T10:06:55.385Z\",\n            \"updatedAt\": \"2026-02-09T10:06:55.385Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "all filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/posts?page=1&limit=5&status=published&author=6989a7776d148dcedfecfd85&tag=node&sort=createdAt&order=desc&q=rest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                },
+                {
+                  "key": "status",
+                  "value": "published"
+                },
+                {
+                  "key": "author",
+                  "value": "6989a7776d148dcedfecfd85"
+                },
+                {
+                  "key": "tag",
+                  "value": "node"
+                },
+                {
+                  "key": "sort",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "key": "q",
+                  "value": "rest"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "all filter",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/posts?page=1&limit=5&status=published&tag=node&sort=createdAt&order=desc&q=rest",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "posts"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "id": 0,
+                      "sortOrder": 0
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5",
+                      "id": 1,
+                      "sortOrder": 1
+                    },
+                    {
+                      "key": "status",
+                      "value": "published",
+                      "id": 2,
+                      "sortOrder": 2
+                    },
+                    {
+                      "key": "author",
+                      "value": "6989a7776d148dcedfecfd8",
+                      "id": 3,
+                      "sortOrder": 3,
+                      "disabled": true
+                    },
+                    {
+                      "key": "tag",
+                      "value": "node",
+                      "id": 4,
+                      "sortOrder": 4
+                    },
+                    {
+                      "key": "sort",
+                      "value": "createdAt",
+                      "id": 5,
+                      "sortOrder": 5
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc",
+                      "id": 6,
+                      "sortOrder": 6
+                    },
+                    {
+                      "key": "q",
+                      "value": "rest",
+                      "id": 7,
+                      "sortOrder": 7
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "451",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1c3-IfO7GdcT1lkfceiwEHG0lV2d6yY\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:11:06 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 5,\n    \"total\": 1,\n    \"totalPages\": 1,\n    \"results\": 1,\n    \"data\": [\n        {\n            \"deletedAt\": null,\n            \"_id\": \"698c3a30ef9b9ed6ef57a67d\",\n            \"title\": \"Understanding REST APIs\",\n            \"slug\": \"understanding-rest-apis 2\",\n            \"content\": \"REST APIs are a standard way to build backend services...\",\n            \"status\": \"published\",\n            \"tags\": [\n                \"api\",\n                \"backend\",\n                \"node\"\n            ],\n            \"author\": null,\n            \"publishedAt\": \"2026-02-11T08:13:36.030Z\",\n            \"createdAt\": \"2026-02-11T08:13:36.033Z\",\n            \"updatedAt\": \"2026-02-11T08:13:36.033Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Admin User\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Admin User\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "312",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"138-CMQVa7AGDuVqmOtBVmShUZoI+gU\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:05:20 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThjMzg0MGVmOWI5ZWQ2ZWY1N2E2NjIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzA3OTcxMjAsImV4cCI6MTc3MTQwMTkyMH0.NPWZHXpF1QzQ1OJybg0I7z8rRrKiSTsp1oDw4WoY9Ek\",\n    \"user\": {\n        \"id\": \"698c3840ef9b9ed6ef57a662\",\n        \"name\": \"Admin User\",\n        \"email\": \"admin@example.com\",\n        \"role\": \"admin\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin2@example.com\",\r\n  \"password\": \"123456781\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"admin2@example.com\",\r\n  \"password\": \"123456781\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "314",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"13a-aWKUvJpDzD9d1nt3eFi7znM2FGM\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 08:05:45 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThiMzI2YzRjMzVhYWQyZWRhZWZjZDAiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzA3OTcxNDUsImV4cCI6MTc3MTQwMTk0NX0.HhbAo8XxMhjTkuawpO57ai3SYU8WQNMzVZYl70QZYhA\",\n    \"user\": {\n        \"id\": \"698b326c4c35aad2edaefcd0\",\n        \"name\": \"Admin User2\",\n        \"email\": \"admin2@example.com\",\n        \"role\": \"admin\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "get users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "286",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11e-zkyIuwXZ6b3eWBmOJJiisfLMM+o\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:16:48 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"total\": 1,\n    \"totalPages\": 1,\n    \"results\": 1,\n    \"data\": [\n        {\n            \"_id\": \"698c57004a5b5c4f1ac54c5a\",\n            \"name\": \"Admin User\",\n            \"email\": \"admin34@example.com\",\n            \"role\": \"admin\",\n            \"isActive\": true,\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-02-11T10:16:32.610Z\",\n            \"updatedAt\": \"2026-02-11T10:16:32.610Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "deactive user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/users/698c57004a5b5c4f1ac54c5a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "698c57004a5b5c4f1ac54c5a"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "deactive user",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/users/698c57004a5b5c4f1ac54c5a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "users",
+                    "698c57004a5b5c4f1ac54c5a"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "250",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"fa-7jkFXirHPjewDBNPSjHC7X2ZdTE\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Feb 2026 10:17:57 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"_id\": \"698c57004a5b5c4f1ac54c5a\",\n        \"name\": \"Admin User\",\n        \"email\": \"admin34@example.com\",\n        \"role\": \"admin\",\n        \"isActive\": false,\n        \"deletedAt\": \"2026-02-11T10:17:57.211Z\",\n        \"createdAt\": \"2026-02-11T10:16:32.610Z\",\n        \"updatedAt\": \"2026-02-11T10:17:57.211Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OThiMzI2YzRjMzVhYWQyZWRhZWZjZDAiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzA3OTU4MTQsImV4cCI6MTc3MTQwMDYxNH0.PDNrTQL1mpT6ZxLaj3rBNcOrXFrBzQOaSKbulWZaHfQ",
+        "type": "string"
+      }
+    ]
+  }
+}
