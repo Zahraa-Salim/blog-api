@@ -95,7 +95,7 @@ export function PostsPage() {
   const [imageFile, setImageFile] = useState<File | null>(null);
 
   const debouncedQuery = useDebounce(query, 250);
-  const hasData = Boolean(data?.data.length);
+  const hasData = Boolean(data && data.data.length);
 
   const queryParams = useMemo(
     () => ({
@@ -261,7 +261,9 @@ export function PostsPage() {
 
       setFormOpen(false);
       setImageFile(null);
-      if (!data || data.page !== 1) {
+      if (!data) {
+        await loadPosts();
+      } else if (data.page !== 1) {
         await loadPosts();
       }
     } catch (error) {
@@ -288,7 +290,7 @@ export function PostsPage() {
           totalPages: Math.max(Math.ceil(total / prev.limit), 1),
         };
       });
-      if (data?.page && data.page > 1 && data.data.length === 1) {
+      if (data && data.page > 1 && data.data.length === 1) {
         setPage((prevPage) => Math.max(prevPage - 1, 1));
       }
     } catch (error) {
@@ -548,7 +550,7 @@ export function PostsPage() {
             <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
               <Spinner label="Loading posts..." />
             </motion.div>
-          ) : hasData ? (
+          ) : data && data.data.length ? (
             <motion.div key={`posts-${data.page}-${data.results}-${order}-${sort}-${statusFilter}-${tagFilter}-${authorFilter}-${debouncedQuery}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="posts-grid">
               {data.data.map((post) => (
                 <motion.article key={post._id} layout className="post-card">

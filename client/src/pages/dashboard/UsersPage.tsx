@@ -82,7 +82,7 @@ export function UsersPage() {
 
   const debouncedQuery = useDebounce(query, 250);
   const isSuperAdmin = user?.role === "super_admin";
-  const hasData = Boolean(data?.data.length);
+  const hasData = Boolean(data && data.data.length);
 
   const queryParams = useMemo(
     () => ({ page, limit, sort, order, q: debouncedQuery }),
@@ -145,7 +145,7 @@ export function UsersPage() {
           totalPages: Math.max(Math.ceil(total / prev.limit), 1),
         };
       });
-      if (data?.page && data.page > 1 && data.data.length === 1) {
+      if (data && data.page > 1 && data.data.length === 1) {
         setPage((prevPage) => Math.max(prevPage - 1, 1));
       }
     } catch (error) {
@@ -353,7 +353,7 @@ export function UsersPage() {
             <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
               <Spinner label="Loading admins..." />
             </motion.div>
-          ) : hasData ? (
+          ) : data && data.data.length ? (
             <motion.div key={`users-${data.page}-${data.results}-${sort}-${order}-${debouncedQuery}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
               <div className="desktop-only">
                 <Table headers={["Name", "Email", "Role", "Created", "Actions"]}>
