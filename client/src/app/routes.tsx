@@ -67,15 +67,7 @@ export function AppRoutes() {
             </ProtectedRoute>
           }
         >
-          <Route
-            index
-            element={
-              <Navigate
-                to={user?.role === "super_admin" ? "/dashboard/users" : "/dashboard/authors"}
-                replace
-              />
-            }
-          />
+          <Route index element={<Navigate to="/dashboard/authors" replace />} />
           <Route path="users" element={<UsersPage />} />
           <Route path="authors" element={<AuthorsPage />} />
           <Route path="posts" element={<PostsPage />} />

@@ -19,7 +19,6 @@ const authorSchema = new Schema(
 
 // helpful indexes
 authorSchema.index({ status: 1, createdAt: -1 });
-authorSchema.index({ email: 1 });
 authorSchema.index({ name: 1 });
 
 export const Author = model("Author", authorSchema);
