@@ -37,7 +37,6 @@ function PageTransition({ children }: { children: ReactNode }) {
 
 export function AppRoutes() {
   const location = useLocation();
-  const user = getAuthUser();
 
   return (
     <AnimatePresence mode="wait">
