@@ -12,7 +12,7 @@ import { RegisterPage } from "../pages/auth/RegisterPage";
 import { AuthorsPage } from "../pages/dashboard/AuthorsPage";
 import { PostsPage } from "../pages/dashboard/PostsPage";
 import { UsersPage } from "../pages/dashboard/UsersPage";
-import { getAuthUser, isAuthenticated } from "../lib/auth";
+import { isAuthenticated } from "../lib/auth";
 
 function ProtectedRoute({ children }: { children: ReactNode }) {
   if (!isAuthenticated()) {
