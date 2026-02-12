@@ -7,7 +7,7 @@ import { getToken } from "./auth";
 import { buildQueryString } from "./query";
 import type { ApiQuery, Author, AuthorPayload, AuthResponse, PaginatedResponse, Post, PostPayload, User } from "../types/api";
 
-const API_URL = (import.meta.env.VITE_API_URL || "https://blog-api-a282.onrender.com").replace(/\/$/, "");
+const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
 
 export class ApiError extends Error {
   status: number;
