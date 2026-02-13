@@ -2,7 +2,6 @@
  * Sidebar navigation component.
  * Renders desktop/mobile nav links with active states and quick actions.
  */
-
 import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../ui/Button";

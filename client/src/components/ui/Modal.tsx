@@ -2,7 +2,6 @@
  * Animated modal component.
  * Shows dialog content with backdrop and close handling for forms and confirmations.
  */
-
 import { AnimatePresence, motion } from "framer-motion";
 import type { ReactNode } from "react";
 

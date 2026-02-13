@@ -2,7 +2,6 @@
  * Frontend API client module.
  * Centralizes fetch logic, auth header injection, and typed endpoint methods.
  */
-
 import { getToken } from "./auth";
 import { buildQueryString } from "./query";
 import type { ApiQuery, Author, AuthorPayload, AuthResponse, PaginatedResponse, Post, PostPayload, User } from "../types/api";

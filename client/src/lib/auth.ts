@@ -2,7 +2,6 @@
  * Authentication storage helpers.
  * Reads, writes, clears, and validates JWT token state in localStorage.
  */
-
 import type { AuthUser } from "../types/api";
 
 const TOKEN_KEY = "admin_dashboard_token";

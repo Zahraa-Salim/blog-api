@@ -2,7 +2,6 @@
  * Reusable button component.
  * Provides consistent button variants, loading state, and full-width mode.
  */
-
 import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
 

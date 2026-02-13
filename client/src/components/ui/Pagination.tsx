@@ -2,7 +2,6 @@
  * Pagination navigation component.
  * Handles previous/next page controls and current page indicator.
  */
-
 import { Button } from "./Button";
 
 type PaginationProps = {

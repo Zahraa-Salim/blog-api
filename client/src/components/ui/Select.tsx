@@ -2,7 +2,6 @@
  * Reusable select field component.
  * Wraps a dropdown with optional label and validation error display.
  */
-
 import clsx from "clsx";
 import { forwardRef } from "react";
 import type { SelectHTMLAttributes } from "react";

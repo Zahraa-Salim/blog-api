@@ -2,7 +2,6 @@
  * Authors management page.
  * Provides listing, filtering, create, edit, and soft-delete workflows for authors.
  */
-
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

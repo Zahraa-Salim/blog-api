@@ -2,7 +2,6 @@
  * Admin registration page.
  * Validates registration input, creates account, and redirects to login after success.
  */
-
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

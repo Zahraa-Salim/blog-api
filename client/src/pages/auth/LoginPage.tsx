@@ -2,7 +2,6 @@
  * Admin login page.
  * Validates login input, authenticates user, stores token, and redirects to dashboard.
  */
-
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

@@ -2,7 +2,6 @@
  * Shared API type definitions.
  * Declares response models and domain entities used across the frontend codebase.
  */
-
 export type Order = "asc" | "desc";
 
 export interface AuthUser {

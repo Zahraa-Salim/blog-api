@@ -2,7 +2,6 @@
  * Central application routing map.
  * Defines public auth routes, protected dashboard routes, and animated page transitions.
  */
-
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import type { ReactNode } from "react";

@@ -2,7 +2,6 @@
  * Reusable input field component.
  * Wraps a text input with optional label and validation error display.
  */
-
 import clsx from "clsx";
 import { forwardRef } from "react";
 import type { InputHTMLAttributes } from "react";

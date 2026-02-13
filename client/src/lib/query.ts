@@ -2,7 +2,6 @@
  * Query helper module.
  * Builds URL query strings from optional filter, sort, and pagination parameters.
  */
-
 export function buildQueryString(params: Record<string, string | number | undefined | null>): string {
   const query = new URLSearchParams();
 

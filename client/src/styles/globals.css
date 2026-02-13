@@ -2,7 +2,6 @@
  * Global stylesheet for the dashboard.
  * Defines theme tokens, layout structure, responsive rules, and shared component styles.
  */
-
 :root {
   --bg: #f3f5f8;
   --surface: #ffffff;

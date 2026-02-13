@@ -2,7 +2,6 @@
  * Loading indicator component.
  * Shows a spinner with optional message during async operations.
  */
-
 export function Spinner({ label = "Loading..." }: { label?: string }) {
   return (
     <div className="spinner">

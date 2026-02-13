@@ -2,7 +2,6 @@
  * Admins management page.
  * Displays admins with search/sort/pagination and supports deactivation actions.
  */
-
 import { useEffect, useMemo, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";

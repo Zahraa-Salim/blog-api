@@ -2,7 +2,6 @@
  * Empty-state presentation component.
  * Displays a friendly title and description when a dataset has no results.
  */
-
 type EmptyStateProps = {
   title: string;
   description?: string;

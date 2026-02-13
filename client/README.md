@@ -1,4 +1,4 @@
-# Admin Dashboard Client
+# Admin Dashboard Client 
 
 React + Vite + TypeScript admin dashboard for the blog platform API.
 

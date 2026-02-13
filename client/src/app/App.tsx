@@ -2,7 +2,6 @@
  * Root React application component.
  * Renders route configuration and global toast notifications.
  */
-
 import { Toaster } from "react-hot-toast";
 import { AppRoutes } from "./routes";
 

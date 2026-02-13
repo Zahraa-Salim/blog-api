@@ -2,7 +2,6 @@
  * Reusable table wrapper component.
  * Renders standardized table headers and row content for dashboard lists.
  */
-
 import type { ReactNode } from "react";
 
 type TableProps = {

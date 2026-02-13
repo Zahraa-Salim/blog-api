@@ -2,7 +2,6 @@
  * Main dashboard shell layout.
  * Coordinates sidebar/mobile navigation, theme mode, and logout behavior for protected pages.
  */
-
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { Sidebar } from "./Sidebar";
