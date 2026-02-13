@@ -36,7 +36,15 @@ router.post(
 router.get("/", getPosts);
 router.get("/author/:authorId", validate(authorIdParamSchema), getPostsByAuthor);
 router.get("/:id", validate(idParamSchema), getPostById);
-router.patch("/:id", adminOnly, validate(idParamSchema), validate(updatePostSchema), updatePost);
+router.patch(
+  "/:id",
+  adminOnly,
+  validate(idParamSchema),
+  uploadPostImage.single("image"),
+  normalizePostPayload,
+  validate(updatePostSchema),
+  updatePost
+);
 router.delete("/:id", adminOnly, validate(idParamSchema), deletePost);
 
 export default router;

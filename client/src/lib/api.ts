@@ -117,10 +117,10 @@ export const api = {
         body: body instanceof FormData ? body : JSON.stringify(body),
       }),
 
-    update: (id: string, body: Partial<PostPayload>) =>
+    update: (id: string, body: Partial<PostPayload> | FormData) =>
       request<{ data: Post }>(`/api/posts/${id}`, {
         method: "PATCH",
-        body: JSON.stringify(body),
+        body: body instanceof FormData ? body : JSON.stringify(body),
       }),
 
     delete: (id: string) =>

@@ -45,8 +45,14 @@ export const getPostById = asyncHandler(async (req: Request, res: Response) => {
   res.json({ data: post });
 });
 
-export const updatePost = asyncHandler(async (req: Request, res: Response) => {
-  const post = await postService.updatePost(String(req.params.id), req.body);
+export const updatePost = asyncHandler(async (req: FileRequest, res: Response) => {
+  const payload = { ...req.body } as Record<string, unknown>;
+
+  if (req.file) {
+    payload.image = buildFileUrl(req, req.file.filename);
+  }
+
+  const post = await postService.updatePost(String(req.params.id), payload);
   res.json({ data: post });
 });
 

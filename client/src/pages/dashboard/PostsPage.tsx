@@ -91,6 +91,7 @@ export function PostsPage() {
   const [modalMode, setModalMode] = useState<ModalMode>("create");
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [deletingPost, setDeletingPost] = useState<Post | null>(null);
+  const [detailsPost, setDetailsPost] = useState<Post | null>(null);
   const [imageFile, setImageFile] = useState<File | null>(null);
 
   const debouncedQuery = useDebounce(query, 250);
@@ -220,7 +221,19 @@ export function PostsPage() {
       };
 
       if (modalMode === "edit" && editingPost) {
-        const response = await api.posts.update(editingPost._id, payload);
+        const response = await (imageFile
+          ? (() => {
+              const formData = new FormData();
+              formData.append("title", payload.title);
+              formData.append("slug", payload.slug);
+              formData.append("content", payload.content);
+              formData.append("status", payload.status);
+              formData.append("author", payload.author);
+              formData.append("tags", JSON.stringify(payload.tags));
+              formData.append("image", imageFile);
+              return api.posts.update(editingPost._id, formData);
+            })()
+          : api.posts.update(editingPost._id, payload));
         setData((prev) => {
           if (!prev) return prev;
           return {
@@ -552,7 +565,7 @@ export function PostsPage() {
           ) : data && data.data.length ? (
             <motion.div key={`posts-${data.page}-${data.results}-${order}-${sort}-${statusFilter}-${tagFilter}-${authorFilter}-${debouncedQuery}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="posts-grid">
               {data.data.map((post) => (
-                <motion.article key={post._id} layout className="post-card">
+                <motion.article key={post._id} layout className="post-card" onClick={() => setDetailsPost(post)}>
                   <img
                     className="post-card__image"
                     src={post.image || DEFAULT_POST_IMAGE}
@@ -591,10 +604,22 @@ export function PostsPage() {
                     </div>
 
                     <div className="post-card__actions">
-                      <Button variant="secondary" onClick={() => openEditModal(post)}>
+                      <Button
+                        variant="secondary"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          openEditModal(post);
+                        }}
+                      >
                         Edit
                       </Button>
-                      <Button variant="danger" onClick={() => setDeletingPost(post)}>
+                      <Button
+                        variant="danger"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setDeletingPost(post);
+                        }}
+                      >
                         Delete
                       </Button>
                     </div>
@@ -618,6 +643,67 @@ export function PostsPage() {
           disabled={loading}
         />
       ) : null}
+
+      <Modal
+        open={Boolean(detailsPost)}
+        title="Post details"
+        onClose={() => setDetailsPost(null)}
+      >
+        {detailsPost ? (
+          <div className="form-stack">
+            <div className="post-card">
+              <img
+                className="post-card__image"
+                src={detailsPost.image || DEFAULT_POST_IMAGE}
+                alt={detailsPost.title}
+                onError={(event) => {
+                  event.currentTarget.src = DEFAULT_POST_IMAGE;
+                }}
+              />
+              <div className="post-card__body">
+                <p className="info-text">This post is titled "{detailsPost.title}".</p>
+                <p className="info-text">Its slug is "/{detailsPost.slug}".</p>
+                <p className="info-text">The current status is {detailsPost.status}.</p>
+                <p className="info-text">It was written by {detailsPost.author?.name || "an unknown author"}.</p>
+                <p className="info-text">It was created on {formatDate(detailsPost.createdAt)}.</p>
+                <p className="info-text">It was last updated on {formatDate(detailsPost.updatedAt)}.</p>
+                <p className="info-text">
+                  {detailsPost.publishedAt
+                    ? `It was published on ${formatDate(detailsPost.publishedAt)}.`
+                    : "It has not been published yet."}
+                </p>
+                <p className="info-text">
+                  {detailsPost.tags.length
+                    ? `Tags include ${detailsPost.tags.join(", ")}.`
+                    : "This post has no tags."}
+                </p>
+                <p className="info-text">The content reads: {detailsPost.content}</p>
+
+                <div className="post-card__actions">
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setDetailsPost(null);
+                      openEditModal(detailsPost);
+                    }}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => {
+                      setDetailsPost(null);
+                      setDeletingPost(detailsPost);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </Modal>
 
       <Modal
         open={formOpen}
@@ -665,23 +751,23 @@ export function PostsPage() {
             {...register("tagsInput")}
           />
 
-          {modalMode === "create" ? (
-            <label className="field">
-              <span className="field__label">Image</span>
-              <input
-                className="field__control file-input"
-                type="file"
-                accept="image/*"
-                onChange={(event) => {
-                  const file = event.target.files?.[0] || null;
-                  setImageFile(file);
-                }}
-              />
-              {imageFile ? (
-                <span className="info-text info-text--small">Selected: {imageFile.name}</span>
-              ) : null}
-            </label>
-          ) : null}
+          <label className="field">
+            <span className="field__label">{modalMode === "edit" ? "Replace image (optional)" : "Image"}</span>
+            <input
+              className="field__control file-input"
+              type="file"
+              accept="image/*"
+              onChange={(event) => {
+                const file = event.target.files?.[0] || null;
+                setImageFile(file);
+              }}
+            />
+            {imageFile ? (
+              <span className="info-text info-text--small">Selected: {imageFile.name}</span>
+            ) : modalMode === "edit" ? (
+              <span className="info-text info-text--small">Current image will remain if no file is chosen.</span>
+            ) : null}
+          </label>
 
           <div className="form-actions">
             <Button
