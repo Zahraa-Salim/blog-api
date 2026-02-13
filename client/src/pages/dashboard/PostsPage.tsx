@@ -96,6 +96,7 @@ export function PostsPage() {
 
   const debouncedQuery = useDebounce(query, 250);
   const hasData = Boolean(data && data.data.length);
+  const imagePreviewUrl = useMemo(() => (imageFile ? URL.createObjectURL(imageFile) : ""), [imageFile]);
 
   const queryParams = useMemo(
     () => ({
@@ -167,6 +168,13 @@ export function PostsPage() {
   useEffect(() => {
     void loadPosts();
   }, [queryParams]);
+
+  useEffect(() => {
+    if (!imagePreviewUrl) return;
+    return () => {
+      URL.revokeObjectURL(imagePreviewUrl);
+    };
+  }, [imagePreviewUrl]);
 
   const resetFilters = () => {
     setPage(1);
@@ -651,7 +659,7 @@ export function PostsPage() {
       >
         {detailsPost ? (
           <div className="form-stack">
-            <div className="post-card">
+            <div className="post-card post-card--modal">
               <img
                 className="post-card__image"
                 src={detailsPost.image || DEFAULT_POST_IMAGE}
@@ -661,23 +669,32 @@ export function PostsPage() {
                 }}
               />
               <div className="post-card__body">
-                <p className="info-text">This post is titled "{detailsPost.title}".</p>
-                <p className="info-text">Its slug is "/{detailsPost.slug}".</p>
-                <p className="info-text">The current status is {detailsPost.status}.</p>
-                <p className="info-text">It was written by {detailsPost.author?.name || "an unknown author"}.</p>
-                <p className="info-text">It was created on {formatDate(detailsPost.createdAt)}.</p>
-                <p className="info-text">It was last updated on {formatDate(detailsPost.updatedAt)}.</p>
-                <p className="info-text">
-                  {detailsPost.publishedAt
-                    ? `It was published on ${formatDate(detailsPost.publishedAt)}.`
-                    : "It has not been published yet."}
-                </p>
-                <p className="info-text">
-                  {detailsPost.tags.length
-                    ? `Tags include ${detailsPost.tags.join(", ")}.`
-                    : "This post has no tags."}
-                </p>
-                <p className="info-text">The content reads: {detailsPost.content}</p>
+                <div className="post-details">
+                  <p className="post-details__line">
+                    The title is <strong>{detailsPost.title}</strong>.
+                  </p>
+                  <p className="post-details__line">
+                    The slug is <strong>/{detailsPost.slug}</strong>.
+                  </p>
+                  <p className="post-details__line">The current status is {detailsPost.status}.</p>
+                  <p className="post-details__line">
+                    It was written by {detailsPost.author?.name || "an unknown author"}.
+                  </p>
+                  <p className="post-details__line">It was created on {formatDate(detailsPost.createdAt)}.</p>
+                  <p className="post-details__line">It was last updated on {formatDate(detailsPost.updatedAt)}.</p>
+                  <p className="post-details__line">
+                    {detailsPost.publishedAt
+                      ? `It was published on ${formatDate(detailsPost.publishedAt)}.`
+                      : "It has not been published yet."}
+                  </p>
+                  <p className="post-details__line">
+                    {detailsPost.tags.length
+                      ? `It is tagged with ${detailsPost.tags.join(", ")}.`
+                      : "It has no tags."}
+                  </p>
+                  <p className="post-details__line">The content is:</p>
+                  <p className="post-details__content">{detailsPost.content}</p>
+                </div>
 
                 <div className="post-card__actions">
                   <Button
@@ -766,6 +783,21 @@ export function PostsPage() {
               <span className="info-text info-text--small">Selected: {imageFile.name}</span>
             ) : modalMode === "edit" ? (
               <span className="info-text info-text--small">Current image will remain if no file is chosen.</span>
+            ) : null}
+            {modalMode === "edit" && (imagePreviewUrl || editingPost?.image) ? (
+              <div className="image-preview">
+                <img
+                  className="image-preview__thumb"
+                  src={imagePreviewUrl || editingPost?.image || DEFAULT_POST_IMAGE}
+                  alt="Post preview"
+                  onError={(event) => {
+                    event.currentTarget.src = DEFAULT_POST_IMAGE;
+                  }}
+                />
+                <span className="info-text info-text--small">
+                  {imagePreviewUrl ? "New image preview." : "Current image preview."}
+                </span>
+              </div>
             ) : null}
           </label>
 

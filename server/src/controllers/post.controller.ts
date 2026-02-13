@@ -14,8 +14,10 @@
  */
 
 import type { Request, Response } from "express";
+import { unlink } from "fs/promises";
 import { asyncHandler } from "../middlewares/asyncHandler";
 import * as postService from "../services/post.service";
+import { isCloudinaryConfigured, uploadPostImage } from "../lib/cloudinary";
 
 type FileRequest = Request & { file?: Express.Multer.File };
 
@@ -28,7 +30,12 @@ export const createPost = asyncHandler(async (req: FileRequest, res: Response) =
   const payload = { ...req.body } as Record<string, unknown>;
 
   if (req.file) {
-    payload.image = buildFileUrl(req, req.file.filename);
+    if (isCloudinaryConfigured()) {
+      payload.image = await uploadPostImage(req.file.path);
+      void unlink(req.file.path).catch(() => null);
+    } else {
+      payload.image = buildFileUrl(req, req.file.filename);
+    }
   }
 
   const post = await postService.createPost(payload);
@@ -49,7 +56,12 @@ export const updatePost = asyncHandler(async (req: FileRequest, res: Response) =
   const payload = { ...req.body } as Record<string, unknown>;
 
   if (req.file) {
-    payload.image = buildFileUrl(req, req.file.filename);
+    if (isCloudinaryConfigured()) {
+      payload.image = await uploadPostImage(req.file.path);
+      void unlink(req.file.path).catch(() => null);
+    } else {
+      payload.image = buildFileUrl(req, req.file.filename);
+    }
   }
 
   const post = await postService.updatePost(String(req.params.id), payload);
