@@ -16,6 +16,11 @@ This repo contains a protected Admin Dashboard frontend and a JWT-secured REST A
    - `JWT_SECRET`
    - `JWT_EXPIRES_IN`
    - `PORT`
+   - Optional (recommended for image uploads on Render/Vercel):
+     - `CLOUDINARY_CLOUD_NAME`
+     - `CLOUDINARY_API_KEY`
+     - `CLOUDINARY_API_SECRET`
+     - `CLOUDINARY_FOLDER` (default: `posts`)
 4. `npm run dev`
 
 ### Frontend (client)
