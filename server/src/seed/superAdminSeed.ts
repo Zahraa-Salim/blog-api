@@ -4,7 +4,6 @@
  * dashboard can always be accessed for initial setup. This runs at startup,
  * is idempotent, and refreshes the seed user's role/credentials if needed.
  */
-
 import bcrypt from "bcrypt";
 import { User } from "../models/User";
 

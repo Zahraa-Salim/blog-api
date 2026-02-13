@@ -1,4 +1,4 @@
-# Admin Dashboard + API
+# Admin Dashboard + API  
 
 ## Overview
 This repo contains a protected Admin Dashboard frontend and a JWT-secured REST API backend. The dashboard manages authors, posts, and admin accounts, with role-based access and soft-delete behavior.

@@ -3,6 +3,7 @@
  * Purpose: Maps /api/posts endpoints to controller functions + validation middleware.
  * Includes nested-like route: GET /api/posts/author/:authorId
  */
+
 import { Router } from "express";
 import {
   createPost,

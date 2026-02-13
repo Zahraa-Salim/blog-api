@@ -46,6 +46,7 @@ export const getUsers = asyncHandler(async (req, res) => {
  * - sets isActive=false
  * - sets deletedAt=now
  */
+
 export const deactivateUser = asyncHandler(async (req, res) => {
   const user = await User.findByIdAndUpdate(
     req.params.id,

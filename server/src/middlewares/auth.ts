@@ -29,6 +29,7 @@
  * - Works together with auth.service.ts (token creation)
  * - Ensures only authorized users can access protected resources
  */
+
 import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { AppError } from "../utils/AppError";

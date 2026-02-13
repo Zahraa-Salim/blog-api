@@ -3,6 +3,7 @@
  * Purpose: Register global middlewares, routes, 404 handler, and error handler.
  * Note: `app` is exported and used by server.ts.
  */
+
 import express from "express";
 import path from "path";
 import cors from "cors";

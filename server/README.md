@@ -1,4 +1,4 @@
-# Blog Platform REST API (Admin-Managed)
+# Blog Platform REST API (Admin-Managed) 
 
 Production-ready REST API built with Node.js, Express, TypeScript, and MongoDB Atlas.  
 An admin-authenticated system that manages Users, Authors, and Posts.  

@@ -2,6 +2,7 @@
  * Author routes.
  * Purpose: Maps /api/authors endpoints to controller functions + validation middleware.
  */
+
 import { Router } from "express";
 import {
   createAuthor,

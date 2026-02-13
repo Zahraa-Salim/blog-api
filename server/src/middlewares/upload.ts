@@ -2,6 +2,7 @@
  * Multer upload configuration for post images.
  * Stores uploaded files locally under /uploads/posts.
  */
+
 import fs from "fs";
 import path from "path";
 import multer from "multer";

@@ -3,6 +3,7 @@
  * Purpose: Reusable filtering, searching, sorting, and pagination across resources.
  * Used in GET /api/posts and GET /api/authors.
  */
+
 import type { Query } from "mongoose";
 
 export class ApiFeatures {

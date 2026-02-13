@@ -2,6 +2,7 @@
  * MongoDB connection via Mongoose.
  * Purpose: Connect once on server startup; fail fast if connection fails.
  */
+
 import dotenv from "dotenv";
 dotenv.config();
 

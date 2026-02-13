@@ -12,6 +12,7 @@
  * - Business logic lives in post.service.ts
  * - This layer only manages request/response flow
  */
+
 import type { Request, Response } from "express";
 import { asyncHandler } from "../middlewares/asyncHandler";
 import * as postService from "../services/post.service";

@@ -5,6 +5,7 @@
  * ready for incoming requests. Startup errors are logged and exit the process
  * to avoid running with a partially initialized state.
  */
+
 import { app } from "./app";
 import { connectDB } from "./config/db";
 import { env } from "./config/env";

@@ -2,6 +2,7 @@
  * Post Mongoose model.
  * Purpose: Defines Post schema and the relation: Post.author -> Author (ObjectId ref).
  */
+
 import { Schema, model, Types } from "mongoose";
 
 const DEFAULT_POST_IMAGE =

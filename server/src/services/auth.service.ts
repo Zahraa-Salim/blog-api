@@ -13,7 +13,6 @@
  * - Does NOT send HTTP responses (handled by controller)
  * - Uses JWT_SECRET and JWT_EXPIRES_IN from environment config
  */
-
 import bcrypt from "bcrypt";
 import jwt, { type Secret, type SignOptions } from "jsonwebtoken";
 import { User } from "../models/User";

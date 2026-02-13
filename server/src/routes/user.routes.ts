@@ -2,6 +2,7 @@
  * User routes.
  * Purpose: Admin-only endpoints for listing system users.
  */
+
 import { Router } from "express";
 import { getUsers, deactivateUser, updateUserRole } from "../controllers/user.controller";
 import { protect, superAdminOnly } from "../middlewares/auth";

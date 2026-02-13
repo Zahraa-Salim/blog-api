@@ -12,7 +12,6 @@
  * - GET /api/posts/:id
  * - GET /api/posts/author/:authorId
  */
-
 import { z } from "zod";
 
 /** Reusable ObjectId validator */

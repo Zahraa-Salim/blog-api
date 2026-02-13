@@ -2,6 +2,7 @@
  * Author Mongoose model.
  * Purpose: Defines Author schema (name, email, bio) and handles DB operations for authors.
  */
+
 import { Schema, model } from "mongoose";
 
 const authorSchema = new Schema(

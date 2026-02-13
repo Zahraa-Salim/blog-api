@@ -13,7 +13,6 @@
  * - Posts
  * - Authentication (register/login)
  */
-
 import { z } from "zod";
 import { objectId } from "./ids";
 

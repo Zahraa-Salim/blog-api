@@ -2,6 +2,7 @@
  * Wraps async route handlers/controllers.
  * Purpose: Automatically forwards async errors to the global error handler.
  */
+
 import type { Request, Response, NextFunction } from "express";
 
 type AsyncFn = (req: Request, res: Response, next: NextFunction) => Promise<any>;

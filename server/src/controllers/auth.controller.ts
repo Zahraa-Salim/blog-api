@@ -12,6 +12,7 @@
  * - Password hashing and token creation are handled in auth.service.ts
  * - Protected routes use auth middleware (protect + adminOnly)
  */
+
 import type { Request, Response } from "express";
 import { asyncHandler } from "../middlewares/asyncHandler";
 import * as authService from "../services/auth.service";

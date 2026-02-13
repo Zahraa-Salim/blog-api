@@ -2,6 +2,7 @@
  * User Mongoose model (BONUS - JWT auth).
  * Purpose: Stores admin/user credentials for login (hashed password) and role-based access.
  */
+
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema(
